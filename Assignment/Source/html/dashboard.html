@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <link rel="stylesheet" href="../css/stylesheet2.css">
+        <script src ="../js/script.js"></script>
+        <script src="../js/dashboard.js"></script>
+</head>
+
+      <body onload="LoadData();">
+            <div class="edit-profile" onclick="profile_edit()">EDIT PROFILE</div>
+            <div class="logout" onclick="logout()">LOGOUT</div>
+
+          <div id="div1" class="header">
+            <h1>To Do List</h1><br> 
+
+            <div class="search-container">
+              <input type="text" placeholder="Search by name" name="search_name" id="search_name" value="">
+              <input type="button" value="Search" placeholder=Search id="searchByName" onclick="SearchByName()" >
+             
+            </div>
+
+      <div class="input-box">
+          <input type="submit" value="Delete" placeholder="Delete" id="deletechanges"onclick="deleteElement()" >
+          <input type="button" value="Reset" placeholder="delete" id = "resetchanges" onclick="reloadPage();">
+        
+        </div>  
+
+       
+        <div class="filter">
+            <select id="categorylist" onchange="CheckTheSelectOption()">
+              <option onchange="loadData();" value="filterby">Filter By</option>
+                <option value="category">category</option>
+                <option value="status">status</option>
+            </select>
+            
+            <select id="category11" onchange="SearchByCategory()">
+              <option value="by category">category options</option>
+              <option value="home">Home</option>
+              <option value="office" >Office</option>
+              <option value="personal">personal</option>
+            </select>
+
+            <select id="category12" onchange="SearchByStatus()">
+              <option value="by status">status options</option>
+              <option value="done">Done</option>
+              <option value="pending" >pending</option>
+            </select>
+           
+              <input type="date" placeholder="Due" name ="due" value="" id="startdate" >
+              <input type="date" placefolder="set" name="set" value="" id="enddate">
+              
+             <input type="submit" placeholder="date" name="date" value="submit" id="comparedate" onclick="FilterByDate()">
+               
+        
+      </div><br><br><hr>
+      </div>
+      
+ <div class="add-container" >
+
+                <p> Add To Do</p><br>
+      To Do Name: <input type="text" placeholder="toDo name" name="l_name" id="todoname" value=""><br><br>
+      Categories
+      <select id="category">
+          <option value="office" >Office</option>
+          <option value="personal">personal</option>
+          <option value="home">home</option>
+      </select><br><br>
+
+            Start Date : <input type="date" placeholder="Enter Startddate" name="l_name" id="sdate" value="" >
+            Due date : <input type="date" placeholder="Enter duedate" name="l_name" id="edate" value="" ><br><br>
+            Add todo note : <input type="text" placeholder="Add ToDo Note" name="l_name" id="addtodonote" value="" ><br><br>
+      
+            is Public 
+            <input type="radio" name="ispublic" value="yes" checked>yes
+            <input type="radio" name="ispublic" value="no"> no<br><br>
+
+            <button type="button" value="submit" id="addchanges" onclick="addtodo()"> Add todo</button>
+            <button type="button" value="submit" id="markchanges" onclick="markAsDone()"> Mark done</button>
+            <input type="button" value="save changes" placeholder="Add" id="savechanges" onclick="SaveElement();">
+
+          </div><br>
+
+            <table width=100% id="tableid">
+              <thead>
+                <tr>
+                  <th>Delete</th>
+                  <th>Todo Name</th>
+                  <th>Category</th>
+                  <th> Start Date</th>
+                  <th> Due Date</th>
+                  <th> Add Todo Note</th>
+                  <th> is Done</th>
+                  <th> is Public</th>
+                </tr>
+              </thead>
+              <tbody id="bodytable">
+                </tbody>
+             
+            </table>
+  </body>
+</html>
